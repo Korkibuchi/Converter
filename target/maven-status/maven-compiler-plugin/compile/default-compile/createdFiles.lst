@@ -1,1 +1,6 @@
+spec\HashMapCurrencyModeService.class
+spec\mavenproject2\Mavenproject2.class
+spec\CurrencyModeService.class
+spec\NbrbCurrencyConversionService.class
 spec\CurrencyConversionService.class
+spec\Currency.class

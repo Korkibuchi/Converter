@@ -1,8 +1,6 @@
 
 package spec;
 
-import java.util.HashMap;
-
 public interface CurrencyModeService {
 
   static CurrencyModeService getInstance() {

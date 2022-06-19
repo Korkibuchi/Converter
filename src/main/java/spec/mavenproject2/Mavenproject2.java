@@ -6,17 +6,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.TelegramBotsApi;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
-import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.MessageEntity;
-import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
-import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -29,7 +23,6 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import spec.Currency;
 import spec.CurrencyConversionService;
 import spec.CurrencyModeService;
-import spec.NbrbCurrencyConversionService;
 
 public class Mavenproject2 extends TelegramLongPollingBot{
     
