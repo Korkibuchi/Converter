@@ -28,22 +28,26 @@ public class NbrbCurrencyConversionService implements CurrencyConversionService 
 
   @SneakyThrows
   private double getRate(Currency currency) {
-    if (currency == Currency.BYN) {
-      return 1;
+    if (currency.getName().equals("RUB")){
+        return 1;
     }
-    URL url = new URL("https://www.nbrb.by/api/exrates/rates/" + currency.getId());
+    URL url = new URL("https://www.cbr-xml-daily.ru/daily_json.js");
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
     con.setRequestMethod("GET");
     BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
     String inputLine;
     StringBuilder response = new StringBuilder();
     while ((inputLine = in.readLine()) != null) {
-      response.append(inputLine);
+             response.append(inputLine);
     }
     in.close();
-    json = new JSONObject(response.toString());
-    double rate = json.getDouble("Cur_OfficialRate");
-    double scale = json.getDouble("Cur_Scale");
+    JSONObject obj = new JSONObject(response.toString());
+        JSONObject valute = obj.getJSONObject("Valute");
+        JSONObject val = valute.getJSONObject(currency.getName());
+        
+        double scale = val.getDouble("Nominal");
+        double rate = val.getDouble("Value");
+    
     return rate / scale;
   }
 
