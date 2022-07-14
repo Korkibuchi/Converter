@@ -76,7 +76,7 @@ public class Mavenproject2 extends TelegramLongPollingBot{
             if (commandEntity.isPresent()){
                 String command = message.getText().substring(commandEntity.get().getOffset(), commandEntity.get().getLength());
                 switch (command){
-                    case "/changer" -> { 
+                    case "/changer" : { 
                         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
                         Currency originalCurrency =  currencyModeService.getOriginalCurrency(message.getChatId());
                         Currency targetCurrency = currencyModeService.getTargetCurrency(message.getChatId());
@@ -139,8 +139,8 @@ public class Mavenproject2 extends TelegramLongPollingBot{
         String action = param[0];
         Currency newCur = Currency.valueOf(param[1]);
         switch (action){
-            case "ORIGINAL" -> currencyModeService.setOriginalCurrency(message.getChatId(), newCur); 
-            case "TARGET" -> currencyModeService.setTargetCurrency(message.getChatId(), newCur);
+            case "ORIGINAL": currencyModeService.setOriginalCurrency(message.getChatId(), newCur); break;
+            case "TARGET" : currencyModeService.setTargetCurrency(message.getChatId(), newCur);break;
         }
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
                         Currency originalCurrency =  currencyModeService.getOriginalCurrency(message.getChatId());
