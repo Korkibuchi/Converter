@@ -1,6 +1,6 @@
 
 
-package spec.mavenproject2;
+package spec;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,9 +20,6 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
-import spec.Currency;
-import spec.CurrencyConversionService;
-import spec.CurrencyModeService;
 
 public class Mavenproject2 extends TelegramLongPollingBot{
     
